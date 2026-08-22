@@ -4,8 +4,8 @@ using UnityEngine;
 public class Weapon : ScriptableObject
 {
     public String weaponName {get; set;}
-    public Sprite weaponSprite;
-    public Dictionary<String, Integer> BaseDamage {get; set;}
-    public Dictionary<String, String> Attributes{get; set;}
+    public Sprite weaponSprite {get; set;}
+    public Dictionary<string, int> BaseDamage {get; set;} = new Dictionary<string, int>();
+    public Dictionary<string, string> Attributes{get; set;} = new Dictionary<string, string>();
 
 }
