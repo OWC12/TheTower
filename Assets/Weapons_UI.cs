@@ -7,7 +7,7 @@ public class WeaponDisplay : MonoBehaviour
     [SerializeField] private Image weaponImage;
     [SerializeField] private TMP_Text weaponName;
 
-    public void SetWeapon(WeaponData weapon)
+    public void SetWeapon(Weapon weapon)
     {
         if (weapon == null)
         {
