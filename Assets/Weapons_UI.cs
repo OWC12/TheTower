@@ -20,3 +20,4 @@ public class WeaponDisplay : MonoBehaviour
         weaponImage.sprite = weapon.weaponSprite;
         weaponName.text = weapon.weaponName;
     }
+}
