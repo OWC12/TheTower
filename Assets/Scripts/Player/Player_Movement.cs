@@ -7,9 +7,10 @@ public class Player_Movement : MonoBehaviour
     public float sprint_coefficient = 2f;
     public Rigidbody2D rb;
 
-    public Image staminaBar;
 
     [Header("Stamina")]
+    public Image staminaBar;
+
     public float maxStamina = 100f;
     public float currentStamina;
 
@@ -26,6 +27,7 @@ public class Player_Movement : MonoBehaviour
     private float maxEnergyBarWidth;
 
     [Header("Health")]
+    public Image healthBar;
     public float maxHealth = 100f;
     public float currentHealth;
 
