@@ -43,7 +43,7 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         //left = -1, right = +1, no_input = 0
-        if(vertical = 0){
+        if(vertical == 0){
             horizontal = Input.GetAxis("Horizontal");  
         }
         //down = -1, up = =1, no_input = 0 
