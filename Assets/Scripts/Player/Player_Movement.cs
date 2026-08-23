@@ -43,13 +43,21 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         //left = -1, right = +1, no_input = 0
-        if(vertical == 0){
-            horizontal = Input.GetAxis("Horizontal");  
-        }
+
+        horizontal = Input.GetAxis("Horizontal"); 
+
+        if(horizontal != 0){
+            vertical =0;
+        } 
+        else{
         //down = -1, up = =1, no_input = 0 
-        if(horizontal == 0){
             vertical = Input.GetAxis("Vertical");
         }
+        if(vertical != 0){
+            horizontal = 0;
+        }
+
+
 
         Vector2 r = new Vector2(horizontal, vertical) * speed;
 
