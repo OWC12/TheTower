@@ -23,10 +23,14 @@ public class Player_Movement : MonoBehaviour
     private bool exhausted;
 
     private RectTransform staminaRect;
-    private float maxBarWidth;
+    private float maxEnergyBarWidth;
 
     [Header("Health")]
-    public float maxHealth = 100f
+    public float maxHealth = 100f;
+    public float currentHealth;
+
+    private RectTransform healthRect;
+    private float maxHealthBarWidth;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +39,7 @@ public class Player_Movement : MonoBehaviour
         currentStamina = maxStamina;
 
         staminaRect = staminaBar.GetComponent<RectTransform>();
-        maxBarWidth = staminaRect.sizeDelta.x;
+        maxEnergyBarWidth = staminaRect.sizeDelta.x;
         
     }
 
@@ -91,6 +95,6 @@ public class Player_Movement : MonoBehaviour
 
         float percent = currentStamina / maxStamina;
 
-        staminaRect.sizeDelta = new Vector2(maxBarWidth * percent, staminaRect.sizeDelta.y);
+        staminaRect.sizeDelta = new Vector2(maxEnergyBarWidth * percent, staminaRect.sizeDelta.y);
     }
 }
