@@ -6,6 +6,8 @@ public class Player_Movement : MonoBehaviour
     public float speed = 8;
     public float sprint_coefficient = 2f;
     public Rigidbody2D rb;
+    private float horizontal;
+    private float vertical;
 
 
     [Header("Stamina")]
@@ -33,8 +35,6 @@ public class Player_Movement : MonoBehaviour
 
         staminaRect = staminaBar.GetComponent<RectTransform>();
         maxEnergyBarWidth = staminaRect.sizeDelta.x;
-        float horizontal = 0;
-        float vertical = 0;
         
     }
 
