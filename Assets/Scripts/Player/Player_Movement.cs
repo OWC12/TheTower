@@ -33,6 +33,8 @@ public class Player_Movement : MonoBehaviour
 
         staminaRect = staminaBar.GetComponent<RectTransform>();
         maxEnergyBarWidth = staminaRect.sizeDelta.x;
+        float horizontal = 0;
+        float vertical = 0;
         
     }
 
@@ -41,9 +43,9 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         //left = -1, right = +1, no_input = 0
-        float horizontal = 0;
-        float vertical = 0;
-        horizontal = Input.GetAxis("Horizontal");  
+        if(vertical = 0){
+            horizontal = Input.GetAxis("Horizontal");  
+        }
         //down = -1, up = =1, no_input = 0 
         if(horizontal == 0){
             vertical = Input.GetAxis("Vertical");
