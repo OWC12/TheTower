@@ -27,6 +27,6 @@ public class Player_Stats : MonoBehaviour
     }
 
     void Damage(Weapon weapon){
-        return 0;
+        return;
     }
 }
