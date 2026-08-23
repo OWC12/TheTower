@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     public Image staminaBar;
 
     [Header("Stamina")]
-    public float maxStamina = 100f;
+    public float maxStamina = 1000f;
     public float currentStamina;
 
     public float staminaDrainRate = 25f;
@@ -23,7 +23,18 @@ public class Player_Movement : MonoBehaviour
     private bool exhausted;
 
     private RectTransform staminaRect;
-    private float maxBarWidth;
+    private float maxEnergyBarWidth;
+
+    [Header("Health")]
+    public float maxHealth = 500f;
+    public float currentHealth;
+
+    private RectTransform healthRect;
+    private float maxHealthBarWidth;
+
+
+    //add drain and recovery rates for gages like poison, bleed, etc.
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +43,7 @@ public class Player_Movement : MonoBehaviour
         currentStamina = maxStamina;
 
         staminaRect = staminaBar.GetComponent<RectTransform>();
-        maxBarWidth = staminaRect.sizeDelta.x;
+        maxEnergyBarWidth = staminaRect.sizeDelta.x;
         
     }
 
@@ -67,7 +78,7 @@ public class Player_Movement : MonoBehaviour
                 exhausted = true;
             }
         }
-        else if(currentStamina == 0 || (horizontal == 0 && vertical == 0)){
+        //else if(currentStamina == 0 || (horizontal == 0 && vertical == 0)){
             if(currentStamina < maxStamina){
                 recoveryTimer += Time.deltaTime;
 
@@ -75,7 +86,7 @@ public class Player_Movement : MonoBehaviour
                     currentStamina += staminaRecoveryRate * Time.deltaTime;
                 }
             }
-        }
+        //
 
         currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
         if(exhausted){
@@ -88,6 +99,6 @@ public class Player_Movement : MonoBehaviour
 
         float percent = currentStamina / maxStamina;
 
-        staminaRect.sizeDelta = new Vector2(maxBarWidth * percent, staminaRect.sizeDelta.y);
+        staminaRect.sizeDelta = new Vector2(maxEnergyBarWidth * percent, staminaRect.sizeDelta.y);
     }
 }
