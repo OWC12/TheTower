@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour
 {
@@ -15,11 +16,17 @@ public class Player_Stats : MonoBehaviour
     {
         currentHealth = maxHealth;
 
+        healthRect = healthBar.GetComponent<RectTransform>();
+        maxHealthBarWidth = healthRect.sizeDelta.x;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void Damage(Weapon weapon){
+        return 0;
     }
 }

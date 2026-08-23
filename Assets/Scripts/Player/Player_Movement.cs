@@ -43,7 +43,10 @@ public class Player_Movement : MonoBehaviour
         //left = -1, right = +1, no_input = 0
         float horizontal = Input.GetAxis("Horizontal");  
         //down = -1, up = =1, no_input = 0 
-        float vertical = Input.GetAxis("Vertical");
+        float vertical = 0;
+        if(horizontal == 0){
+            vertical = Input.GetAxis("Vertical");
+        }
 
         Vector2 r = new Vector2(horizontal, vertical) * speed;
 
