@@ -26,15 +26,6 @@ public class Player_Movement : MonoBehaviour
     private RectTransform staminaRect;
     private float maxEnergyBarWidth;
 
-    [Header("Health")]
-    public Image healthBar;
-    public float maxHealth = 100f;
-    public float currentHealth;
-
-    private RectTransform healthRect;
-    private float maxHealthBarWidth;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
