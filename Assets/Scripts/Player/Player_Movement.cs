@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     public Image staminaBar;
 
     [Header("Stamina")]
-    public float maxStamina = 1000f;
+    public float maxStamina = 100f;
     public float currentStamina;
 
     public float staminaDrainRate = 25f;
@@ -26,7 +26,7 @@ public class Player_Movement : MonoBehaviour
     private float maxEnergyBarWidth;
 
     [Header("Health")]
-    public float maxHealth = 500f;
+    public float maxHealth = 100f;
     public float currentHealth;
 
     private RectTransform healthRect;
