@@ -23,18 +23,10 @@ public class Player_Movement : MonoBehaviour
     private bool exhausted;
 
     private RectTransform staminaRect;
-    private float maxEnergyBarWidth;
+    private float maxBarWidth;
 
     [Header("Health")]
-    public float maxHealth = 100f;
-    public float currentHealth;
-
-    private RectTransform healthRect;
-    private float maxHealthBarWidth;
-
-
-    //add drain and recovery rates for gages like poison, bleed, etc.
-
+    public float maxHealth = 100f
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,7 +35,7 @@ public class Player_Movement : MonoBehaviour
         currentStamina = maxStamina;
 
         staminaRect = staminaBar.GetComponent<RectTransform>();
-        maxEnergyBarWidth = staminaRect.sizeDelta.x;
+        maxBarWidth = staminaRect.sizeDelta.x;
         
     }
 
@@ -99,6 +91,6 @@ public class Player_Movement : MonoBehaviour
 
         float percent = currentStamina / maxStamina;
 
-        staminaRect.sizeDelta = new Vector2(maxEnergyBarWidth * percent, staminaRect.sizeDelta.y);
+        staminaRect.sizeDelta = new Vector2(maxBarWidth * percent, staminaRect.sizeDelta.y);
     }
 }
