@@ -50,6 +50,7 @@ public class Player_Movement : MonoBehaviour
             if(last_horizontal != 0){
                 horizontal = 0;
             }
+            else vertical = 0;
         }
         
 
