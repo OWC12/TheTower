@@ -56,10 +56,12 @@ public class Player_Movement : MonoBehaviour
         if(vertical == 1 && horizontal == 1){
             vertical = 0;
         }
-        vertical = Input.GetAxis("Vertical");
+        else{
+            vertical = Input.GetAxis("Vertical");
 
-        if(horizontal == 1 && vertical == 1){
-            horizontal = 0;
+            if(horizontal == 1 && vertical == 1){
+                horizontal = 0;
+            }
         }
         
 
