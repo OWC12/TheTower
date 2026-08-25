@@ -6,8 +6,8 @@ public class Player_Movement : MonoBehaviour
     public float speed = 8;
     public float sprint_coefficient = 2f;
     public Rigidbody2D rb;
-    private float horizontal;
-    private float vertical;
+    private float horizontal = 0f;
+    private float vertical = 0f;
 
 
     [Header("Stamina")]
@@ -36,26 +36,32 @@ public class Player_Movement : MonoBehaviour
         staminaRect = staminaBar.GetComponent<RectTransform>();
         maxEnergyBarWidth = staminaRect.sizeDelta.x;
         
+        horizontal = Input.GetAxis("Horizontal"); 
+        vertical = Input.GetAxis("Vertical");
+
+        if(horizontal == 1 && vertical == 1){
+            horizontal = 0;
+        }
+        
     }
 
     // Update is called once per frame
     //Can alternatiely switch to FixedUpdate() which is called 50x per frame rather than a variable frame rate
     void Update()
     {
-        //left = -1, right = +1, no_input = 0
 
+        //left = -1, right = +1, no_input = 0
         horizontal = Input.GetAxis("Horizontal"); 
 
-        if(horizontal != 0){
-            vertical =0;
-        } 
-        else{
-        //down = -1, up = =1, no_input = 0 
-            vertical = Input.GetAxis("Vertical");
+        if(vertical == 1 && horizontal == 1){
+            vertical = 0;
         }
-        if(vertical != 0){
+        vertical = Input.GetAxis("Vertical");
+
+        if(horizontal == 1 && vertical == 1){
             horizontal = 0;
         }
+        
 
 
 
